@@ -1,35 +1,34 @@
 
-SHELL := bash
-NAME = libft
+# SHELL := bash
+NAME = libft.a
 
 # source files
-SRCS = ft_isalpha.c																																																																																																																																																																																																													
-OBJS = ft_isalpha.o
+SRCS = $(wildcard *.c)
+OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -I.
 
-.PHONY: all clean re
+.PHONY: all clean fclean re
+
+%.o: %.c
+	@echo $?
+	$(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) 
-	cc -Wall -Wextra -Werror 
-names:
-	for name in SRCS; do\
-		echo $$name; \
-		
-ft_isalpha.o: ft_isalpha.c
-	cc -c $(CFLAGS)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f ./*.o
+	@echo "Removing object files."
+	@rm -f $(OBJS)
 
+fclean: clean
+	@echo "Removing compiled output files." 
+	@rm -f $(NAME)
 
-fclean:
-	rm -f $(NAME) $(OBJS)
-
-
-re: clean all
+re: fclean all
