@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/25 12:34:54 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/04/25 19:59:39 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,24 @@ int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
-unsigned int	strlen(const char *s);
+unsigned int	ft_strlen(const char *s);
+void 			*ft_memset(void *s, int c, unsigned int n);
 
 /*
-•memset
-•bzero
-•memcpy
-•memmove
-•strlcpy
-•strlcat
-•toupper
-•tolower
-•strchr
-•strrchr
-•strncmp
-•memchr
-•memcmp
-•strnstr
-•atoi
+ft_memset
+ft_bzero
+ft_memcpy
+ft_memmove
+ft_strlcpy
+ft_strlcat
+ft_toupper
+ft_tolower
+ft_strchr
+ft_strrchr
+ft_strncmp
+ft_memchr
+ft_memcmp
+ft_strnstr
+ft_atoi
 */
 #endif

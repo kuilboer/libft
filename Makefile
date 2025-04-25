@@ -10,7 +10,9 @@ SRCS = \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
-	ft_isprint.c
+	ft_isprint.c \
+	ft_strlen.c \
+	ft_memset.c
 OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
@@ -25,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c libft.f
+%.o: %.c #libft.h
 	@echo $?
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
 
