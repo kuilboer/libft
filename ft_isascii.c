@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalnum.c                                       :+:    :+:            */
+/*   ft_isascii.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/23 14:47:26 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/25 11:04:09 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/04/25 11:35:04 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/04/25 12:00:05 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+int	ft_isascii(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (c >= 0 && c <= 127);
+	/* return ((unsigned int)c <= 0x7F);*/
 }

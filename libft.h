@@ -1,18 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalnum.c                                       :+:    :+:            */
+/*   libft.h                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/23 14:47:26 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/25 11:04:09 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/04/25 12:34:54 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
 
-int	ft_isalnum(int c)
-{
-	return (ft_isalpha(c) || ft_isdigit(c));
-}
+#define LIBFT_H
+
+int				ft_isalnum(int c);
+int				ft_isalpha(int c);
+int				ft_isdigit(int c);
+int				ft_isascii(int c);
+int				ft_isprint(int c);
+unsigned int	strlen(const char *s);
+
+/*
+•memset
+•bzero
+•memcpy
+•memmove
+•strlcpy
+•strlcat
+•toupper
+•tolower
+•strchr
+•strrchr
+•strncmp
+•memchr
+•memcmp
+•strnstr
+•atoi
+*/
+#endif

@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalnum.c                                       :+:    :+:            */
+/*   ft_isprint.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/23 14:47:26 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/25 11:04:09 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/04/25 12:07:06 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/04/25 12:26:57 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+int isprint(int c)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	return (c >= 32 && c <= 126);
 }

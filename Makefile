@@ -1,9 +1,16 @@
 
 # SHELL := bash
+
 NAME = libft.a
+#HEADER = libft.h
 
 # source files
-SRCS = $(wildcard *.c)
+SRCS = \
+	ft_isalpha.c \
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c
 OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
@@ -13,15 +20,14 @@ CPPFLAGS = -I.
 
 .PHONY: all clean fclean re
 
-%.o: %.c
-	@echo $?
-	$(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
-
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+%.o: %.c libft.f
+	@echo $?
+	$(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
 
 clean:
 	@echo "Removing object files."
