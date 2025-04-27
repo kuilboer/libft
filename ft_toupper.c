@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isprint.c                                       :+:    :+:            */
+/*   toupper.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/25 12:07:06 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/27 15:28:13 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/04/27 18:11:11 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/04/27 18:27:49 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+#include "libft.h"
+
+int ft_toupper(int c)
 {
-	return (c >= 32 && c <= 126);
+	if (c >= 'a' && c <= 'z')
+		return (c + 20);
+	return (c);
 }
