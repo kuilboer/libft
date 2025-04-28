@@ -13,8 +13,9 @@ SRCS = \
 	ft_isprint.c \
 	ft_tolower.c \
 	ft_toupper.c \
-	ft_strlen.c \
-	ft_memset.c 
+	ft_strlen.c  \
+	ft_strchr.c  \
+	ft_memset.c  
 OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags

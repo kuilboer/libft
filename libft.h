@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/27 18:29:04 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/04/28 20:02:11 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int				ft_isprint(int c);
 int 			ft_tolower(int c);
 int				ft_toupper(int c);
 unsigned int	ft_strlen(const char *s);
+char 			*ft_strchr(const char *s, int c);
 void 			*ft_memset(void *s, int c, unsigned int n);
 
 /*
