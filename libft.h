@@ -6,13 +6,15 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/29 15:33:21 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/04/29 17:55:36 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 
 #define LIBFT_H
+
+#include <stddef.h>
 
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
@@ -24,6 +26,7 @@ int				ft_toupper(int c);
 unsigned int	ft_strlen(const char *s);
 char 			*ft_strchr(const char *s, int c);
 char 			*ft_strrchr(const char *s, int c);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void 			*ft_memset(void *s, int c, unsigned int n);
 
 /*
