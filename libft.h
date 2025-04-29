@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/29 17:55:36 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/04/29 20:52:08 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ unsigned int	ft_strlen(const char *s);
 char 			*ft_strchr(const char *s, int c);
 char 			*ft_strrchr(const char *s, int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
 void 			*ft_memset(void *s, int c, unsigned int n);
 
 /*

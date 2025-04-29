@@ -5,6 +5,7 @@ NAME = libft.a
 #HEADER = libft.h
 
 # source files
+
 SRCS = \
 	ft_isalpha.c \
 	ft_isdigit.c \
@@ -17,6 +18,7 @@ SRCS = \
 	ft_strchr.c  \
 	ft_strrchr.c \
 	ft_strncmp.c \
+	#ft_strnstr.c \
 	ft_memset.c  
 OBJS = $(SRCS:.c=.o)
 
