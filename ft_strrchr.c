@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strchr.c                                        :+:    :+:            */
+/*   ft_strrchr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/04/28 17:53:26 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/29 15:31:27 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/04/29 14:48:22 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/04/29 15:32:22 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "libft.h"
 #include <stdio.h>
 
-char *ft_strchr(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
-	int i;
+	char	*ptr;
 
-	i = 0;
-	while (1) // run forever.
+	ptr = 0;
+	while (1) // run forever to also catch '/0' edge case.
 	{
-		if (s[i] == (char)c)
+		if (*s == (char)c)
 		{
-			return ((char *)&s[i]);
+			ptr = (char*)s;
 		}
-		if (s[i] == '\0')
+		if (*s == '\0')
 			break; // break out of the loop at the end of the string.
-		i++;
+		s++;
 	}
-	return (0);
+	return (ptr);
+	
 }
