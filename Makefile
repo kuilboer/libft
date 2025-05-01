@@ -19,7 +19,8 @@ SRCS = \
 	ft_strrchr.c \
 	ft_strncmp.c \
 	ft_strnstr.c \
-	ft_memset.c  
+	ft_strlcpy.c \
+	ft_memset.c
 OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
