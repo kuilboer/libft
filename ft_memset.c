@@ -6,18 +6,21 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 13:03:21 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/25 20:05:18 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/04 19:35:56 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+#include "libft.h"
+#include <stdio.h>
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*ptr;
 
 	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 		ptr[i++] = (unsigned char)c;
-	return (s);
+	return ((void *)s);
 }
