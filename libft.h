@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/05 17:02:23 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/05 18:47:53 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #define LIBFT_H
 
 #include <stddef.h>
+#include <limits.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -23,6 +24,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int 	ft_tolower(int c);
 int		ft_toupper(int c);
+int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);
 char 	*ft_strchr(const char *s, int c);
 char 	*ft_strrchr(const char *s, int c);
