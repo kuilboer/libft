@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/05 23:45:01 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/07 13:41:00 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 13:56:13 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (nmemb > SIZE_MAX / size)
 		return (NULL);
 	ptr = malloc (nmemb * size);
-	return ((void *)ptr);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
