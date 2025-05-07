@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/07 15:01:10 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 18:01:43 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
