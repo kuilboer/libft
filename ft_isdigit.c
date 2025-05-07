@@ -6,11 +6,11 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/23 14:38:43 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/25 11:02:25 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 11:29:57 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }

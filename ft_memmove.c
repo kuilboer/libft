@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/05 13:50:12 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/05 15:43:22 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 13:35:31 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*d_buf;
 	unsigned char	*s_buf;
 

@@ -6,10 +6,11 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/22 14:18:42 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/04/22 15:52:40 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 11:28:28 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c){
+int	ft_isalpha(int c)
+{
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

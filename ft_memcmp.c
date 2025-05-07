@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/05 15:56:04 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/05 16:28:24 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 13:34:03 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t				i;
 	const unsigned char	*str1 = (const unsigned char *)s1;
 	const unsigned char	*str2 = (const unsigned char *)s2;
-	
+
 	i = 0;
 	while (i < n)
 	{

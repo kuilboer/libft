@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/01 20:35:41 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/04 14:29:10 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 12:15:00 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	if (dst)
-	dst[i + dst_len] = '\0';
-
+		dst[i + dst_len] = '\0';
 	return ((size_t)(dst_len + src_len));
 }
