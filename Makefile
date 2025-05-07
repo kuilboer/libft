@@ -15,6 +15,7 @@ SRCS = \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_atoi.c    \
+	ft_strdup.c  \
 	ft_strlen.c  \
 	ft_strchr.c  \
 	ft_strrchr.c \

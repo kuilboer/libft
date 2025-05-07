@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/07 14:36:37 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/07 15:01:10 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h> // required for malloc()
 # include <stdint.h> // required for SIZE_MAX macro
 # include <limits.h>
+# include <errno.h> /* provides the means to "set errno global variable" 
+					   when malloc fails. */ 
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -27,6 +29,7 @@ int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *nptr);
+char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
