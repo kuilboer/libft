@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_substr.c                                        :+:    :+:            */
+/*   ft_strjoin.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/07 18:00:46 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/07 20:30:34 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/05/07 20:07:08 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/05/07 21:40:57 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*sub_str;
-	size_t	str_len;
-	size_t  sub_len;
+	char	*new_str;
+	size_t	str1_len;
+	size_t	str2_len;
 	size_t	i;
 
-	if (s == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	str_len = ft_strlen(s);
-	if (start >= str_len)
-		return (ft_strdup(""));
-	sub_len = str_len - start;
-	if (sub_len > len)
-		sub_len = len;
-	sub_str = malloc((sub_len + 1));
-	if (!sub_str)
+	str1_len = ft_strlen(s1);
+	str2_len = ft_strlen(s2);
+	new_str = malloc((str1_len + str2_len + 1));
+	if (!new_str)
 		return (NULL);
 	i = 0;
-	while (i < sub_len)
+	while (i < str1_len)
 	{
-		sub_str[i] = s[start + i];
+		new_str[i] = s1[i];
 		i++;
 	}
-	sub_str[i] = '\0';
-	return (sub_str);
+	while (i < (str1_len + str2_len))
+		new_str[i++] = *s2++;
+	new_str[i] = '\0';
+	return (new_str);
 }

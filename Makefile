@@ -29,7 +29,10 @@ SRCS = \
 	ft_memcmp.c  \
 	ft_memcpy.c  \
 	ft_memmove.c \
-	ft_memset.c
+	ft_memset.c  \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_split.c   
 OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
