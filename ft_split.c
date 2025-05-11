@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/08 15:07:34 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/10 22:39:46 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/11 20:02:32 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct s_word
+static void	clear_mem(char **arr, t_word *strc_arr)
 {
-	int start_i;
-	int end_i;
-	int len;
-} t_word;
+	int	i;
 
-static inline int is_word_start(int i, const char *s, char c)
-{
-	return (s[i] != c && (i == 0 || s[i - 1] == c));
+	i = 0;
+	if (arr)
+	{
+		while (arr[i])
+			free(arr[i++]);
+		free(arr);
+	}
+	if (strc_arr)
+		free(strc_arr);
+	return ;
 }
 
-static inline int is_word_end(int i, const char *s, char c)
+static int	word_count(const char *s, char delim)
 {
-	return (s[i] == c && i != 0 && s[i - 1] != c);
-}
+	int	i;
+	int	count;
 
-static int word_count(const char *s, char delim)
-{
-	int i = 0;
-	int count = 0;
-
+	count = 0;
+	i = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == delim)
@@ -47,131 +48,78 @@ static int word_count(const char *s, char delim)
 				i++;
 		}
 	}
-	return count;
+	return (count);
 }
 
-// ===== Helper: count chars in a word =====
-static int char_count(const char *s, char delim)
+static int	find_words(t_word *s_words, const char *s, char c)
 {
-	int len = 0;
-	while (s[len] && s[len] != delim)
-		len++;
-	return len;
-}
+	int		in_word;
+	size_t	word_i;
+	size_t	i;
 
-// ===== Helper: free partial allocation =====
-static char **clear_mem(char **s, int index)
-{
-	while (index >= 0)
-	{
-		free(s[index]);
-		index--;
-	}
-	free(s);
-	return NULL;
-}
-
-static int find_words (t_word *s_words, const char *s, char c)
-{
-	int	word_i;
-	int	i;
-
+	in_word = 0;
 	word_i = 0;
 	i = 0;
-	while (s[i])
+	while (s[i] || in_word == 1)
 	{
-		if (is_word_start(i, s, c))				//s[i] != c && (i = 0 || s[i - 1] == c))
+		if (s[i] != c && in_word == 0)
 		{
 			s_words[word_i].start_i = i;
-			printf("word start: [ %c", s[i]);
+			s_words[word_i].end_i = 0;
+			s_words[word_i].len = 1;
+			in_word = 1;
 		}
-		else if (is_word_end(i, s, c)) 			//s[i] == c && s[i - 1] != c)
+		else if ((s[i] == c || !s[i]) && in_word == 1)
 		{
-			s_words[word_i].end_i = i - 1;
-			s_words[word_i].len = s_words[word_i].end_i - s_words[word_i].start_i;
-			printf("%c]\n\n", s[i]);
+			s_words[word_i].end_i = i;
+			s_words[word_i].len = i - s_words[word_i].start_i;
 			word_i++;
-			
-			// printf("Word %d: [%.*s] (start_i=%d, end_i=%d, len=%d)\n",
-			// word_i,
-			// s_words[word_i].len,
-			// &s[s_words[word_i].start_i],
-			// s_words[word_i].start_i,
-			// s_words[word_i].end_i,
-			// s_words[word_i].len);
+			in_word = 0;
 		}
-		else
-			if (s[i] != c) {printf("%c, ", s[i]);}
+		if (!s[i])
+			break ;
 		i++;
 	}
 	return (word_i);
 }
 
-
-char **ft_split(const char *s, char c)
+static int	copy_words(char **new_strs,	const char *s,
+	t_word *s_words,	size_t count)
 {
-	char 	**new_strs;
-	t_word	*s_words;
-	int 	count;
+	size_t	i;
 
-	if (s == NULL || c == '\0')
+	i = 0;
+	while (i < count)
 	{
-		return NULL;
+		new_strs[i] = (char *)malloc(sizeof(char) * (s_words[i].len + 1));
+		if (!new_strs[i])
+			clear_mem(new_strs, s_words);
+		ft_memcpy(new_strs[i], &s[s_words[i].start_i], s_words[i].len);
+		new_strs[i][s_words[i].len] = '\0';
+		i++;
 	}
+	new_strs[count] = NULL;
+	return (i);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**new_strs;
+	t_word	*s_words;
+	size_t	count;
+
+	if (s == NULL )
+		return (NULL);
 	count = word_count(s, c);
 	new_strs = malloc((count + 1) * sizeof(char *));
-	s_words = malloc((count + 1) * sizeof(t_word));
+	s_words = malloc(count * sizeof(t_word));
 	if (!new_strs || !s_words)
 	{
-		return NULL;
+		clear_mem(new_strs, s_words);
+		return (NULL);
 	}
-	
 	find_words(s_words, s, c);
-
-	// for (int i = 0; i < count; i++)
-	// {
-	// 	printf("Word %d: [%.*s] (start_i=%d, end_i=%d, len=%d)\n",
-	// 		i,
-	// 		s_words[i].len,
-	// 		&s[s_words[i].start_i],
-	// 		s_words[i].start_i,
-	// 		s_words[i].end_i,
-	// 		s_words[i].len);
-	// }
-
-	new_strs[count] = NULL;
+	copy_words(new_strs, s, s_words, count);
+	free(s_words);
 	return (new_strs);
-}
-
-static void free_split(char **arr)
-{
-    if (!arr) return;
-    for (int i = 0; arr[i]; i++)
-        free(arr[i]);
-    free(arr);
-}
-
-int	main(void)
-{
-	struct {
-        const char *input;
-        char delim;
-        const char *expected[10];
-    } tests[] = {
-        {"a,b,c", ',', {"a", "b", "c", NULL}},
-        {",a,,b,", ',', {"a", "b", NULL}},
-        {",,,", ',', {NULL}},
-        {"abc", ',', {"abc", NULL}},
-        {"", ',', {NULL}},
-		//{"\0aaa\0bb", '\0', {NULL}},
-        {NULL, ',', {NULL}},
-    };
-
-	for (int t = 0; tests[t].input != NULL || tests[t].expected[0] != NULL; t++)
-	{
-        printf("Testing: '%s'\n", tests[t].input ? tests[t].input : "(null)");
-        char **actual = ft_split(tests[t].input, tests[t].delim);
-		printf("Freeing memory\n");
-		free_split(actual);
-	}
 }

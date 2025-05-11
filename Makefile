@@ -49,7 +49,7 @@ $(NAME): $(OBJS)
 
 %.o: %.c #libft.h
 	@echo $?
-	$(CC) -c $(CPPFLAGS) $(CFLAGS) $^ -o $@
+	$(CC) -c -g -O0 $(CPPFLAGS) $(CFLAGS) $^ -o $@
 
 clean:
 	@echo "Removing object files."
