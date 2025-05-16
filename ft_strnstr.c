@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/29 19:28:39 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/07 13:20:25 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/16 20:49:04 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,27 @@ static int	is_needle(const char *big, const char *little, \
 	return (1);
 }
 
+/*
+The strnstr() function locates the first occurrence of the null-terminated 
+string 'little' in the string 'big', where not more than len characters are 
+searched. Characters that appear after a ‘\0’ character are not searched.
+
+If little is an empty string, big is returned; if little occurs nowhere in big,
+NULL is returned;
+
+Otherwise a pointer to the first character of the first occurrence of little is
+returned.
+*/
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	big_len;
 
 	if (*little == '\0')
 		return ((char *)big);
+	big_len = ft_strlen(big);
+	if (len > big_len)
+		len = big_len;
 	i = 0;
 	while (i < len)
 	{
