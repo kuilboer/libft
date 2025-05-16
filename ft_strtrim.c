@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 21:59:13 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/16 20:19:21 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/16 21:12:51 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-	return (ft_substr(s1, start, end - start ));
+	return (ft_substr(s1, start, end - start));
 }

@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/11 18:34:41 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/16 21:11:19 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 
 // Typedef for use in ft_split
 
-typedef struct	s_word
+typedef struct s_word
 {
 	size_t	start_i;
 	size_t	end_i;
 	size_t	len;
-} t_word;
+}	t_word;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

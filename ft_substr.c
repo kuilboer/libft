@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/07 18:00:46 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/07 20:30:34 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/16 21:13:09 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_str;
 	size_t	str_len;
-	size_t  sub_len;
+	size_t	sub_len;
 	size_t	i;
 
 	if (s == NULL)
