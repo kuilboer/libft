@@ -38,8 +38,9 @@ SRCS = \
 	ft_striteri.c	\
 	ft_putchar_fd.c	\
 	ft_putstr_fd.c	\
-	ft_putendl_fd.c
-	
+	ft_putendl_fd.c	\
+	ft_putnbr_fd.c
+
 OBJS = $(SRCS:.c=.o)
 
 # Compiler and flags
