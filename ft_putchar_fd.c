@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_striteri.c                                      :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/05/17 17:51:44 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/17 19:09:55 by okuilboe      ########   odam.nl         */
+/*   Created: 2025/05/17 19:41:17 by okuilboe      #+#    #+#                 */
+/*   Updated: 2025/05/17 20:34:54 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 /*
-Applies the function ’f’ to each character of the string passed as argument, 
-passing its index as the first argument. Each character is passed by address to
-’f’ so it can be modified if necessary.
+Outputs the character ’c’ to the specified file descriptor. for fd it takes:
+	1 = standard output (stdout)
+	2 = standard error (stderr)
+	0 = standard input (not typically written to)
 Parameters:
-	- s: The string to iterate over.
-	- f: The function to apply to each character.
-Return: 
+	- c: The character to output.
+	- fd: The file descriptor on which to write.
+Return:
 	-
 */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	if (!s || !f)
-		return ;
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	write(fd, &c, 1);
 	return ;
 }
