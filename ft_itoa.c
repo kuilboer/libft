@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/17 09:26:10 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/17 15:26:30 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/17 17:19:43 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static int	digit_count(int n)
 	result = n;
 	while (result)
 	{
-		//printf("%d", result);
 		result /= 10;
 		d_count++;
 	}
@@ -38,7 +37,7 @@ static char	*int_to_char(int n, char *s_nbr, size_t nbr_len)
 	long long	l_nbr;
 	char		sign;
 	int			i;
-	
+
 	sign = 0;
 	l_nbr = n;
 	if (n < 0)
@@ -53,9 +52,8 @@ static char	*int_to_char(int n, char *s_nbr, size_t nbr_len)
 		s_nbr[--i] = l_nbr % 10 + '0';
 		l_nbr /= 10;
 		if (l_nbr == 0)
-			break;
+			break ;
 	}
-
 	if (sign)
 		s_nbr[0] = sign;
 	return (s_nbr);
@@ -75,11 +73,8 @@ char	*ft_itoa(int n)
 	char	sign;
 	size_t	str_len;
 
-	//printf("ft_itoa\n");
 	str_len = digit_count(n);
 	sign = 0;
-	// if (n == 0)
-	// 	return ("0");
 	if (n < 0)
 		str_len += 1;
 	digits = malloc(str_len + 1);
@@ -90,4 +85,3 @@ char	*ft_itoa(int n)
 		digits[0] = '-';
 	return (digits);
 }
-
