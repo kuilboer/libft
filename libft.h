@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/04/25 12:29:15 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/17 22:53:54 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/19 15:32:09 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,6 @@
 # include <stdlib.h> // required for malloc()
 # include <stdint.h> // required for SIZE_MAX macro
 # include <limits.h>
-# include <errno.h> /* provides the means to "set errno global variable" 
-					   when malloc fails. */ 
-
-// Typedef for use in ft_split
-
-typedef struct s_word
-{
-	size_t	start_i;
-	size_t	end_i;
-	size_t	len;
-}	t_word;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

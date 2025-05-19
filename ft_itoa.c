@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/17 09:26:10 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/17 17:19:43 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/19 15:23:35 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,9 @@ Return value:
 char	*ft_itoa(int n)
 {
 	char	*digits;
-	char	sign;
 	size_t	str_len;
 
 	str_len = digit_count(n);
-	sign = 0;
 	if (n < 0)
 		str_len += 1;
 	digits = malloc(str_len + 1);
