@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/08 15:07:34 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/24 11:20:33 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/24 11:58:35 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ static char	*alloc_word(const char *s, int len)
 	word[i] = '\0';
 	return (word);
 }
+
 /*
 * fill_split() loops over the input string to find the words to copy.
 * it loops over the characters until it finds the first character of
@@ -105,6 +106,7 @@ static int	fill_split(char **res, const char *s, char c)
 	res[word_i] = NULL;
 	return (1);
 }
+
 /*
 * Allocates memory (using malloc(3)) and returns an array of strings obtained
 * by splitting ’s’ using the character ’c’ as a delimiter. The last array el-

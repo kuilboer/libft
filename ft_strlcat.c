@@ -6,7 +6,7 @@
 /*   By: okuilboe <okuilboe@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/01 20:35:41 by okuilboe      #+#    #+#                 */
-/*   Updated: 2025/05/24 11:53:46 by okuilboe      ########   odam.nl         */
+/*   Updated: 2025/05/24 12:01:31 by okuilboe      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /*
 * The strlcat() function appends the NUL-terminated string src to the end of
-* dst. It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.
+* dst. It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the
+* result.
 */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
